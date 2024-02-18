@@ -9,7 +9,7 @@ var config *viper.Viper
 
 func init() {
 	config = viper.New()
-	config.SetConfigName("score_config")
+	config.SetConfigName("score-solver_config")
 	config.SetConfigType("yaml")
 	config.AddConfigPath("/run/secrets")
 

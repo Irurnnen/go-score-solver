@@ -1,19 +1,19 @@
 version: "3"
 
 services:
-  score-lpz:
+  lpz-solver:
     build: .
-    container_name: score-lpz
+    container_name: lpz-solver
     ports:
       - "$PORT:$PORT"
     secrets:
-      - score_config.yaml
+      - score-solver_config.yaml
 #     networks:
 #       - networkName
 
 secrets:
-  score_config.yaml:
-    file: ../.secrets/score_config.yaml
+  score-solver_config.yaml:
+    file: ../.secrets/score-solver_config.yaml
 # networks:
 #   lpz-db:
 #     name: lpz-db_lpz-db
