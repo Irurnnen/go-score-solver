@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  score-lpz:
+    build: .
+    container_name: score-lpz
+    ports:
+      - "$PORT:$PORT"
+    secrets:
+      - score_config.yaml
+#     networks:
+#       - networkName
+
+secrets:
+  score_config.yaml:
+    file: ../.secrets/score_config.yaml
+# networks:
+#   lpz-db:
+#     name: lpz-db_lpz-db
