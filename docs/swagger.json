@@ -1,0 +1,236 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/addition": {
+            "get": {
+                "description": "Solve subtraction (+)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Math"
+                ],
+                "summary": "Solve subtraction (+)",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Number A",
+                        "name": "a",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Number B",
+                        "name": "b",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Answer"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/forms.HTTPError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/forms.HTTPError"
+                        }
+                    }
+                }
+            }
+        },
+        "/division": {
+            "get": {
+                "description": "Solve division (/)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Math"
+                ],
+                "summary": "Solve division (/)",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Number A",
+                        "name": "a",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Number B",
+                        "name": "b",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Answer"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/forms.HTTPError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/forms.HTTPError"
+                        }
+                    }
+                }
+            }
+        },
+        "/multiplication": {
+            "get": {
+                "description": "Solve multiplication (*)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Math"
+                ],
+                "summary": "Solve multiplication (*)",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Number A",
+                        "name": "a",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Number B",
+                        "name": "b",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Answer"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/forms.HTTPError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/forms.HTTPError"
+                        }
+                    }
+                }
+            }
+        },
+        "/subtraction": {
+            "get": {
+                "description": "Solve addiction (-)",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Math"
+                ],
+                "summary": "Solve addiction (-)",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Number A",
+                        "name": "a",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Number B",
+                        "name": "b",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Answer"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#/definitions/forms.HTTPError"
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "schema": {
+                            "$ref": "#/definitions/forms.HTTPError"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "forms.HTTPError": {
+            "type": "object",
+            "properties": {
+                "error": {
+                    "type": "string",
+                    "example": "unkown error"
+                },
+                "message": {
+                    "type": "string",
+                    "example": "An error has occurred"
+                }
+            }
+        },
+        "models.Answer": {
+            "type": "object",
+            "properties": {
+                "answer": {
+                    "description": "Answer",
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}
